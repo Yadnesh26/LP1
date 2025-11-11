@@ -1,0 +1,22 @@
+int pir_sensor;
+
+void setup()
+{
+    pinMode(12, OUTPUT);   // LED
+    pinMode(10, OUTPUT);   // Buzzer
+    pinMode(2, INPUT);     // PIR Sensor
+}
+
+void loop()
+{
+    pir_sensor = digitalRead(2);
+
+    if (pir_sensor == HIGH) {
+        digitalWrite(12, HIGH);     // Turn LED ON
+        tone(10, 500, 500);         // Play buzzer tone
+    }
+    else {
+        digitalWrite(12, LOW);      // Turn LED OFF
+        noTone(10);                 // Stop buzzer
+    }
+}
