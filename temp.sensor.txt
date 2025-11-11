@@ -1,0 +1,18 @@
+int temp_sensor;
+void setup()
+{
+    pinMode(13, OUTPUT);
+    pinMode(12, OUTPUT);
+    pinMode(A0, INPUT);
+}
+
+void loop()
+{
+    temp_sensor = analogRead(A0);
+    if (temp_sensor > 200){
+        digitalWrite(13, HIGH);
+        tone(12, 500, 500);
+    }
+    else
+        digitalWrite(13, LOW);
+}
